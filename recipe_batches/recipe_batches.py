@@ -14,10 +14,8 @@ def recipe_batches(recipe, ingredients):
 		if (key not in ingredients.keys()) or (ingredients[key] < recipe[key]):
 				hasIngredients = False
 
-	print(hasIngredients)
 	if hasIngredients:
 		canMake = []
-		print(canMake)
 		for key in recipe:
 			canMake.append(int(ingredients[key]/recipe[key]))
 		total = min(canMake)
