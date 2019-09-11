@@ -2,8 +2,27 @@
 
 import math
 
+# do the ingredients exist to make at lease one?
+# yes - devide ingredients by recipe
+# no  - return 0
+
+
 def recipe_batches(recipe, ingredients):
-  pass 
+	hasIngredients = True
+	total = 0
+	for key in recipe:
+		if (key not in ingredients.keys()) or (ingredients[key] < recipe[key]):
+				hasIngredients = False
+
+	print(hasIngredients)
+	if hasIngredients:
+		canMake = []
+		print(canMake)
+		for key in recipe:
+			canMake.append(int(ingredients[key]/recipe[key]))
+		total = min(canMake)
+
+	return total
 
 
 if __name__ == '__main__':
